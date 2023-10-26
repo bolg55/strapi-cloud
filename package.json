@@ -10,10 +10,10 @@
     "strapi": "strapi"
   },
   "dependencies": {
-    "@strapi/plugin-i18n": "4.12.5",
-    "@strapi/plugin-users-permissions": "4.12.5",
+    "@strapi/plugin-i18n": "4.15.0",
+    "@strapi/plugin-users-permissions": "4.15.0",
     "@strapi/provider-email-sendgrid": "^4.13.3",
-    "@strapi/strapi": "4.12.5",
+    "@strapi/strapi": "4.15.0",
     "better-sqlite3": "8.5.0"
   },
   "author": {
@@ -24,7 +24,7 @@
   },
   "engines": {
     "node": ">=16.0.0 <=20.x.x",
-    "npm": ">=6.0.0"
+    "npm": ">=9.0.0"
   },
   "license": "MIT"
 }
