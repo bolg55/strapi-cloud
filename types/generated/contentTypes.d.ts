@@ -923,6 +923,7 @@ export interface ApiPostPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
+    tags: Attribute.Relation<'api::post.post', 'oneToMany', 'api::tag.tag'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -936,6 +937,29 @@ export interface ApiPostPost extends Schema.CollectionType {
       'api::post.post'
     >;
     locale: Attribute.String;
+  };
+}
+
+export interface ApiTagTag extends Schema.CollectionType {
+  collectionName: 'tags';
+  info: {
+    singularName: 'tag';
+    pluralName: 'tags';
+    displayName: 'tag';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required & Attribute.Unique;
+    post: Attribute.Relation<'api::tag.tag', 'manyToOne', 'api::post.post'>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::tag.tag', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
   };
 }
 
@@ -960,6 +984,7 @@ declare module '@strapi/types' {
       'api::disclaimer.disclaimer': ApiDisclaimerDisclaimer;
       'api::file-upload.file-upload': ApiFileUploadFileUpload;
       'api::post.post': ApiPostPost;
+      'api::tag.tag': ApiTagTag;
     }
   }
 }
