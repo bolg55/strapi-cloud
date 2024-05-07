@@ -15,12 +15,6 @@
       "type": "string",
       "required": true,
       "unique": true
-    },
-    "post": {
-      "type": "relation",
-      "relation": "manyToOne",
-      "target": "api::post.post",
-      "inversedBy": "tags"
     }
   }
 }

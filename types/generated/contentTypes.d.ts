@@ -788,6 +788,43 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiCompanyWithIssueCompanyWithIssue
+  extends Schema.CollectionType {
+  collectionName: 'company_with_issues';
+  info: {
+    singularName: 'company-with-issue';
+    pluralName: 'company-with-issues';
+    displayName: 'Company With Issue';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    companyName: Attribute.String & Attribute.Required & Attribute.Unique;
+    file_uploads: Attribute.Relation<
+      'api::company-with-issue.company-with-issue',
+      'oneToMany',
+      'api::file-upload.file-upload'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::company-with-issue.company-with-issue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::company-with-issue.company-with-issue',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiDisclaimerDisclaimer extends Schema.CollectionType {
   collectionName: 'disclaimers';
   info: {
@@ -853,14 +890,19 @@ export interface ApiFileUploadFileUpload extends Schema.CollectionType {
     singularName: 'file-upload';
     pluralName: 'file-uploads';
     displayName: 'File Upload';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
     fileName: Attribute.String;
-    customerName: Attribute.String;
     file: Attribute.Media & Attribute.Required;
+    company_with_issue: Attribute.Relation<
+      'api::file-upload.file-upload',
+      'manyToOne',
+      'api::company-with-issue.company-with-issue'
+    >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -952,7 +994,6 @@ export interface ApiTagTag extends Schema.CollectionType {
   };
   attributes: {
     title: Attribute.String & Attribute.Required & Attribute.Unique;
-    post: Attribute.Relation<'api::tag.tag', 'manyToOne', 'api::post.post'>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -981,6 +1022,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::company-with-issue.company-with-issue': ApiCompanyWithIssueCompanyWithIssue;
       'api::disclaimer.disclaimer': ApiDisclaimerDisclaimer;
       'api::file-upload.file-upload': ApiFileUploadFileUpload;
       'api::post.post': ApiPostPost;

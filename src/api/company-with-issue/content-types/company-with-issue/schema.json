@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "company_with_issues",
+  "info": {
+    "singularName": "company-with-issue",
+    "pluralName": "company-with-issues",
+    "displayName": "Company With Issue",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "file_uploads": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::file-upload.file-upload",
+      "mappedBy": "company_with_issue"
+    }
+  }
+}

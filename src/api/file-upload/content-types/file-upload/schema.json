@@ -4,7 +4,8 @@
   "info": {
     "singularName": "file-upload",
     "pluralName": "file-uploads",
-    "displayName": "File Upload"
+    "displayName": "File Upload",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -14,19 +15,22 @@
     "fileName": {
       "type": "string"
     },
-    "customerName": {
-      "type": "string"
-    },
     "file": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
         "videos",
         "audios"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
+    },
+    "company_with_issue": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::company-with-issue.company-with-issue",
+      "inversedBy": "file_uploads"
     }
   }
 }
