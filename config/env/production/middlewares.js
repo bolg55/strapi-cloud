@@ -13,6 +13,7 @@ module.exports = [
             "blob:",
             "market-assets.strapi.io",
             "*.strapi.io",
+            "*.digitaloceanspaces.com",
             // "res.cloudinary.com",
           ],
           // "media-src": [
