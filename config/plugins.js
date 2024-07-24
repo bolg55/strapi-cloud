@@ -9,6 +9,7 @@ module.exports = ({ env }) => ({
       settings: {
         defaultFrom: env("SENDGRID_DEFAULT_FROM"),
         defaultReplyTo: env("SENDGRID_DEFAULT_TO"),
+        testAddress: env("SENDGRID_DEFAULT_FROM"),
       },
     },
   },
