@@ -11,6 +11,7 @@ module.exports = ({ env }) => ({
         defaultReplyTo: env("SENDGRID_DEFAULT_TO"),
         testAddress: env("SENDGRID_DEFAULT_FROM"),
       },
+
     },
   },
   upload: {
@@ -25,6 +26,10 @@ module.exports = ({ env }) => ({
         upload: {},
         uploadStream: {},
         delete: {},
+      },
+      breakpoints:{
+        xlarge: 1920,
+        thumbnail: 100,
       },
     },
   },

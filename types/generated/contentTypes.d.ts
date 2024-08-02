@@ -897,7 +897,8 @@ export interface ApiFileUploadFileUpload extends Schema.CollectionType {
   };
   attributes: {
     fileName: Attribute.String;
-    file: Attribute.Media & Attribute.Required;
+    file: Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Attribute.Required;
     company_with_issue: Attribute.Relation<
       'api::file-upload.file-upload',
       'manyToOne',
@@ -959,7 +960,7 @@ export interface ApiPostPost extends Schema.CollectionType {
           localized: true;
         };
       }>;
-    coverImg: Attribute.Media &
+    coverImg: Attribute.Media<'images'> &
       Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
