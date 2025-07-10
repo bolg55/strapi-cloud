@@ -600,7 +600,7 @@ export interface ApiTestTest extends Struct.CollectionTypeSchema {
       Schema.Attribute.Required &
       Schema.Attribute.Unique &
       Schema.Attribute.SetMinMaxLength<{
-        maxLength: 4;
+        maxLength: 3;
         minLength: 3;
       }>;
     updatedAt: Schema.Attribute.DateTime;
