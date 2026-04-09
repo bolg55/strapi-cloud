@@ -1,5 +1,21 @@
 module.exports = ({ env }) => ({
   // ...
+  "strapi-plugin-rate-limit": {
+    enabled: true,
+    config: {
+      defaults: {
+        limit: 5,
+        interval: "1m",
+        blockDuration: 0,
+      },
+      // redis: {
+      //   url: env("REDIS_URL"),
+      //   tls: true,
+      // },
+      rules: [{ path: "/api/upload", limit: 10, interval: "1m" }],
+      maskClientIps: true,
+    },
+  },
   email: {
     config: {
       provider: "sendgrid",
@@ -26,7 +42,7 @@ module.exports = ({ env }) => ({
         uploadStream: {},
         delete: {},
       },
-      breakpoints:{
+      breakpoints: {
         xlarge: 1920,
         thumbnail: 100,
       },
