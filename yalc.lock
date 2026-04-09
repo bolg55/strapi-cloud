@@ -1,8 +1,0 @@
-{
-  "version": "v1",
-  "packages": {
-    "strapi-plugin-rate-limit": {
-      "signature": "64af8006731f1d446034cf4f07839d34"
-    }
-  }
-}
