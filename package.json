@@ -15,6 +15,7 @@
     "upgrade:latest": "npx @strapi/upgrade latest"
   },
   "dependencies": {
+    "@strapi/admin": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
     "@strapi/plugin-graphql": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
     "@strapi/plugin-users-permissions": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
     "@strapi/provider-email-sendgrid": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
