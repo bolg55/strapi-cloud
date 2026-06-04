@@ -15,19 +15,20 @@
     "upgrade:latest": "npx @strapi/upgrade latest"
   },
   "dependencies": {
-    "@strapi/plugin-graphql": "5.42.0",
-    "@strapi/plugin-users-permissions": "5.42.0",
-    "@strapi/provider-email-sendgrid": "5.42.0",
-    "@strapi/provider-upload-cloudinary": "5.42.0",
-    "@strapi/strapi": "5.42.0",
+    "@strapi/plugin-graphql": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
+    "@strapi/plugin-users-permissions": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
+    "@strapi/provider-email-sendgrid": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
+    "@strapi/provider-upload-cloudinary": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
+    "@strapi/strapi": "0.0.0-experimental.9d87e79928913d0c86814e3014e15ddc8c0c6d40",
     "better-sqlite3": "11.3.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
+    "sharp": "^0.34.5",
     "styled-components": "^6.0.0"
   },
   "engines": {
-    "node": ">=18.0.0 <=22.x.x",
+    "node": ">=20.0.0 <=24.x.x",
     "npm": ">=9.0.0"
   },
   "strapi": {
